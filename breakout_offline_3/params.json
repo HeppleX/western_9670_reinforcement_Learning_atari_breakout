@@ -1,0 +1,67 @@
+{
+  "observation_shape": [
+    4,
+    84,
+    84
+  ],
+  "action_size": 4,
+  "config": {
+    "type": "discrete_cql",
+    "params": {
+      "batch_size": 32,
+      "gamma": 0.99,
+      "observation_scaler": {
+        "type": "pixel",
+        "params": {}
+      },
+      "action_scaler": {
+        "type": "none",
+        "params": {}
+      },
+      "reward_scaler": {
+        "type": "clip",
+        "params": {
+          "low": -1.0,
+          "high": 1.0,
+          "multiplier": 1.0
+        }
+      },
+      "compile_graph": false,
+      "learning_rate": 6.25e-05,
+      "optim_factory": {
+        "type": "adam",
+        "params": {
+          "clip_grad_norm": null,
+          "lr_scheduler_factory": {
+            "type": "none",
+            "params": {}
+          },
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.0001,
+          "amsgrad": false
+        }
+      },
+      "encoder_factory": {
+        "type": "default",
+        "params": {
+          "activation": "relu",
+          "use_batch_norm": false,
+          "dropout_rate": null
+        }
+      },
+      "q_func_factory": {
+        "type": "mean",
+        "params": {
+          "share_encoder": false
+        }
+      },
+      "n_critics": 1,
+      "target_update_interval": 10000,
+      "alpha": 1.0
+    }
+  }
+}
