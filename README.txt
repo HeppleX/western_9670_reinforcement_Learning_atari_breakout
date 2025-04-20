@@ -76,7 +76,3 @@ Implement Prioritized Experience Replay (PER) to accelerate DQN training.
 Fine-tune the CQL penalty factor to reduce reward variance.
 
 Combine offline pretraining with online fine-tuning (e.g., using algorithms like AWAC or AWAS) for better results.
-
-调整 CQL 的惩罚因子缓解奖励不稳定；
-
-探索 离线预训练 + 在线微调 的混合策略（如 AWAC、AWAS）。
